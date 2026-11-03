@@ -26,6 +26,19 @@
    失败模式编码成评测题定期回归——效果靠纵向对比验证，不靠感觉。
 5. **同一坑只许踩一次。** 第三次重犯时不要写新规则，要让错误在物理上不可能发生。
 
+## Why this repo is different
+
+Most agent resources cover **how to build** an agent. This one covers **how agents actually fail in production** — written from the incident log of an agent that has run daily operations for months (deploys, debugging, secret handling, self-evaluation).
+
+If you are searching for any of these, you are in the right place:
+
+- LLM agent failure modes / why AI agents fail at real tasks
+- agent reliability checklist / verification discipline for autonomous agents
+- agent postmortem framework / incident taxonomy for LLM operations
+- hallucinated success detection / "the tool said OK but it wasn't"
+- self-improvement loop for agents without gradient access (eval → classify → train → regression)
+- GDPval / GDPx-style evaluation on a zero budget
+
 ## License
 
 MIT
