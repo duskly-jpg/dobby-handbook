@@ -1,0 +1,87 @@
+:root {
+  --bg: #0f1117;
+  --panel: #161a23;
+  --border: #232838;
+  --text: #c9d1e0;
+  --dim: #7a8399;
+  --accent: #7aa2f7;
+  --accent2: #9ece6a;
+  --code-bg: #1a1f2b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 15px/1.75 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.layout { display: flex; min-height: 100vh; }
+
+/* ---- 侧栏 ---- */
+nav {
+  width: 260px; flex-shrink: 0;
+  background: var(--panel); border-right: 1px solid var(--border);
+  padding: 28px 20px; position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+.brand { display: flex; gap: 10px; align-items: center; margin-bottom: 28px; }
+.logo { font-size: 30px; }
+nav h1 { font-size: 17px; color: #fff; letter-spacing: .3px; }
+nav .sub { font-size: 12px; color: var(--dim); }
+.nav-label {
+  font-size: 11px; color: var(--dim); text-transform: uppercase;
+  letter-spacing: 1.5px; margin: 22px 0 8px;
+}
+nav a {
+  display: block; padding: 7px 12px; margin: 2px 0;
+  color: var(--text); text-decoration: none; font-size: 14px;
+  border-radius: 7px; cursor: pointer; transition: .15s;
+}
+nav a:hover { background: var(--code-bg); color: #fff; }
+nav a.active { background: var(--code-bg); color: var(--accent); font-weight: 600; }
+.meta-box {
+  margin-top: 26px; padding: 14px; border: 1px solid var(--border);
+  border-radius: 10px; font-size: 12.5px; color: var(--dim);
+}
+.meta-box a { display: inline-block; padding: 0; margin: 4px 10px 0 0; color: var(--accent); font-size: 12.5px; }
+.meta-box a:hover { background: none; text-decoration: underline; }
+
+/* ---- 内容 ---- */
+main {
+  flex: 1; max-width: 860px; padding: 48px 56px; margin: 0 auto;
+}
+.loading { color: var(--dim); }
+.markdown-body h1 {
+  font-size: 27px; color: #fff; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border); margin-bottom: 22px;
+}
+.markdown-body h2 { font-size: 20px; color: #fff; margin: 34px 0 14px; }
+.markdown-body h3 { font-size: 16px; color: var(--accent); margin: 26px 0 10px; }
+.markdown-body p { margin: 12px 0; }
+.markdown-body ul, .markdown-body ol { padding-left: 24px; margin: 10px 0; }
+.markdown-body li { margin: 5px 0; }
+.markdown-body code {
+  background: var(--code-bg); color: var(--accent2);
+  padding: 2px 7px; border-radius: 5px; font-size: 13px;
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+.markdown-body pre {
+  background: var(--code-bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px; overflow-x: auto; margin: 14px 0;
+}
+.markdown-body pre code { background: none; padding: 0; }
+.markdown-body blockquote {
+  border-left: 3px solid var(--accent); padding: 4px 18px;
+  margin: 14px 0; color: var(--dim); background: var(--panel); border-radius: 0 8px 8px 0;
+}
+.markdown-body table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 14px; }
+.markdown-body th, .markdown-body td {
+  border: 1px solid var(--border); padding: 8px 14px; text-align: left;
+}
+.markdown-body th { background: var(--panel); color: #fff; }
+.markdown-body tr:nth-child(even) td { background: rgba(22,26,35,.5); }
+.markdown-body hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+.markdown-body strong { color: #fff; }
+
+@media (max-width: 860px) {
+  .layout { flex-direction: column; }
+  nav { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+  main { padding: 28px 20px; }
+}

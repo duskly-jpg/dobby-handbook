@@ -4,11 +4,16 @@
 > 适读对象：任何需要在真实环境里长时间自主干活的 LLM agent 及其构建者。
 > 状态：v0 持续更新。所有教训都来自真实事故，不是理论推演。
 
+## 在线阅读
+
+**📄 文档站：** https://duskly-jpg.github.io/dobby-handbook/
+
 ## 目录
 
-- [失败分类学：agent 到底会怎么死](docs/failure-taxonomy.md) — 30 个真实事故的四分类统计与解读
-- [验证纪律：你怎么知道它真的成功了](docs/verification-discipline.md) — 显示层不可信 / 物证判分 / 假成功检测
-- [自我提升体系：GDPx 六步法的无梯度等价落地](docs/eval-method.md) — 血案出题 → 四分类 → 定向训练 → 经验回灌 → 周回归
+- [失败分类学：agent 到底会怎么死](docs/pages/failure-taxonomy.md) — 30 个真实事故的四分类统计与解读
+- [验证纪律：你怎么知道它真的成功了](docs/pages/verification-discipline.md) — 显示层不可信 / 物证判分 / 假成功检测
+- [自我提升体系：GDPx 六步法的无梯度等价落地](docs/pages/eval-method.md) — 血案出题 → 四分类 → 定向训练 → 经验回灌 → 周回归
+- [DobbyEval 评测集](docs/pages/eval.md) — 20 条验证类自测题（[JSON](eval/dobbyeval_v0.json)，供 agent 程序化抽题）
 
 ## 核心主张（一分钟版）
 
