@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  eval-validate:
+    name: DobbyEval dataset check
+    runs-on: instabox-medium
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate eval set
+        run: python eval/validate.py
+
+  docs-links:
+    name: Docs internal links
+    runs-on: instabox-medium
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check internal links
+        run: python scripts/linkcheck.py
